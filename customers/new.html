@@ -1,0 +1,73 @@
+<div class="page-header">
+    <div class="row" >
+        <div class="col-sm-6">
+            <h4><i class="fa fa-users"></i>&nbsp;Customers</h4>
+        </div>
+        <div class="col-sm-6 text-right">
+            <ol class="breadcrumb">
+                <li><a href="javascript: void(0);"><i class="fa fa-tachometer"></i></a></li>
+                <li>Dashboard</li>
+                <li>Customers</li>
+            </ol>
+        </div>
+    </div>
+</div>
+    
+    <div class="row" >
+        <br><br>
+        <div class="col-sm-push-1 col-sm-10 " >
+            <div class="panel panel-default" style="border: #dde6e9 solid 1px;">
+                <div class="panel-heading">
+                    <div style="float:left;"> Customers </div>
+                    <div style="float:right;"><small><a href="#/Customers/new"> <i class="fa fa-plus-circle"></i> New customer</a> </small></div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-push-4 col-sm-4 input-group">
+                            <input type="text" class="form-cntrol" ng-model="query">
+                            <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                        </div>
+                    </div>
+                    <div class="row">  
+                        <div class="col-sm-12" style="margin:10px 0px 0px 0px;">
+                            <table class="table table-bordered table-hovered table-striped">
+                            <thead>
+                                <tr>
+                                    <td> Sr.no. </td>
+                                    <td> Picture </td>
+                                    <td> First name </td>                                    
+                                    <td> Last name </td>
+                                    <td> Cell phone no. </td>
+                                    <td> Birth date </td>
+                                    <td> Actions </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="cust in clc.customers.data track by $index">
+                                    <td>{{$index+1}}</td>
+                                    <td><img ng-src="{{'images/dispPic/' + cust.disPic}}" style="width:50px;height:50px;border-radius:50px;"></td>
+                                    <td>{{cust.firstName}}</td>                                    
+                                    <td>{{cust.lastName}}</td>
+                                    <td>{{cust.cellPhone}}</td>
+                                    <td>{{cust.bdate}}</td>
+                                    <td> 
+                                        <div class="dropdown" style="width:60 px !important">
+                                        <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">
+                                        <i class="fa fa-sort-down"></i></button>
+                                        <ul class="dropdown-menu" style="min-width:30px !important;">
+                                          <li style="width:60 px !important"><button href="#" class = "btn btn-success btn-xs"><i class="fa fa-pencil-square"></i></button></li>
+                                          <li style="width:60 px !important"><button href="#" class = "btn btn-danger btn-xs"><i class="fa fa-trash"></i></button></li>                                          
+                                        </ul>
+                                      </div> 
+                                    </td>
+                                </tr>
+                            </tbody>
+                            </table>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
