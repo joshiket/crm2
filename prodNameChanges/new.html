@@ -1,0 +1,78 @@
+<div class="page-header">
+    <div class="row" >
+        <div class="col-sm-6">
+            <h4><i class="fa fa-cube"></i>&nbsp;Product name change</h4>
+        </div>
+        <div class="col-sm-6 text-right">
+            <ol class="breadcrumb">
+                <li><a href="javascript: void(0);"><i class="fa fa-tachometer"></i></a></li>
+                <li>Dashboard</li>
+                <li>Product Name Change</li>
+            </ol>
+        </div>
+    </div>
+</div>
+    
+    <div class="row" >
+        <br><br>
+        <div class="col-sm-push-2 col-sm-8 " >
+            <div class="panel panel-default" style="border: #dde6e9 solid 1px;">
+                <div class="panel-heading">
+                    <div style="float:left;"> <i class="fa fa-cube"></i> New Product Name change </div>
+                    <div style="float:right;"><small></div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+                            <a href="#/ProductNameChanges/list"> <i class="fa fa-list-alt"></i> Product name changes</a> </small>
+                        </div>
+                    </div>
+                    <div class="row">  
+                        <form name="pncForm" novalidate>
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <label>Old name </label>
+                                        <input type="text" class="form-control" 
+                                               ng-model="npncc.prodNameChange.data.oldName"  
+                                               name="oldName" required>
+                                        <div ng-messages="pncForm.oldName.$error" ng-show="pncForm.oldName.$dirty" class="help-block" role="alert">
+                                            <div ng-message="required"><small><i class="fa fa-asterisk"></i> Old name  is mandatory.</small></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-push-2 col-sm-5">
+                                        <label>New name</label>
+                                        <input type="text" class="form-control" 
+                                               ng-model="npncc.prodNameChange.data.newName" 
+                                               name="newName" required>
+                                        <div ng-messages="pncForm.newName.$error" ng-show="pncForm.newName.$dirty" class="help-block" role="alert">
+                                            <div ng-message="required"><small><i class="fa fa-asterisk"></i> New name  is mandatory.</small></div>
+                                        </div>                                               
+                                    </div>               
+                                </div>  
+                                <br><br>
+                                <div class="row">
+                                    <div class="col-sm-12" ng-show="npncc.alerts.isComplete();">
+                                        <div class="alert alert-success" ng-show="npncc.alerts.isComplete() && !npncc.alerts.hasError()">
+                                            <i class="fa fa-check-circle"></i> {{npncc.alerts.getMessage()}}
+                                        </div>
+                                        <div class="alert alert-danger" ng-show="npncc.alerts.isComplete() && npncc.alerts.hasError()">
+                                            <i class="fa fa-exclamation-triangle"></i> {{npncc.alerts.getMessage()}}
+                                        </div>  
+                                    </div>
+                                </div>    
+                                <div class="row">
+                                    <div class="col-sm-3 pull-right">
+                                        <buton class="btn btn-primary" ng-show="pncForm.$valid" ng-click="npncc.createProductNameChange();"><i class="fa fa-save"></i> Save</buton>
+                                        <button class="btn btn-default" ng-click="pncForm.resetForm();">Reset</button>
+                                    </div>
+                                </div>                          
+                            </div>           
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>

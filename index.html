@@ -9,6 +9,7 @@
 
         <!-- Common plugins -->
         <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css" rel="stylesheet">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="plugins/pace/pace.css" rel="stylesheet">
@@ -19,6 +20,7 @@
         <!-- dataTables -->
         <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
         <link href="plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="plugins/datepicker/datepicker.min.css" rel="stylesheet" type="text/css">
         <!--template css-->
         <link href="css/style.css" rel="stylesheet">
         <link rel="icon" href="images/" sizes="32x32" type="images/faviconAB.png">
@@ -177,129 +179,24 @@
                     <ul class="metisMenu nav" id="menu">
                         
                         <li>
-                            <a href="#/Dashboard" aria-expanded="true"><i class="fa fa-tachometer"></i> Dashboard </a>
+                            <a href="#/Dashboard" ><i class="fa fa-tachometer"></i> Dashboard </a>
                         </li>
                         <li><a href="#/Customers/list"><i class="fa fa-users"></i> Customers </a></li>
-                        <!--li class="active">
-                            <a href="javascript: void(0);" aria-expanded="true"><i class="icon-handbag"></i> E-commerce <span class="fa arrow"></span></a>
-                            <ul class="nav-second-level nav" aria-expanded="true">
-                                <li><a href="ecommerce-dashboard.html">Dashboard</a></li>
-                                <li><a href="ecommerce-products.html">products</a></li>
-                                <li><a href="ecommerce-orders.html">orders</a></li>
-                            </ul>
-                        </li-->
-                        <li>
-                            <a href="javascript: void(0);" aria-expanded="true"><i class="icon-envelope-letter"></i> Mail <span class="fa arrow"></span></a>
-                            <ul class="nav-second-level nav" aria-expanded="true">
-                                <li><a href="mail-index.html">Inbox</a></li>
-                                <li><a href="mail-view.html">Inbox view</a></li>
-                                <li><a href="mail-compose.html">Compose</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" aria-expanded="true"><i class="icon-grid"></i> Layouts <span class="fa arrow"></span></a>
-                            <ul class="nav-second-level nav" aria-expanded="true">
-                                <li><a href="layout-sidebar-topbar-dark.html">Sidebar +Topbar Dark</a></li>
-                                <li><a href="layout-sidebar-colored.html">Sidebar Colored</a></li>
-                                <li><a href="layout-horizontal.html">Horizontal</a></li>
+                        <li> <a href="#/Products/list"><i class="fa fa-archive"></i> Products </a>  </li>                      
+                        <li> <a href="#/ProductNameChanges/list"><i class="fa fa-cube"></i> Product Name change </a>  </li>                      
+                        <li> <a href="#/Customers/list"><i class="fa fa-gear"></i> Raw materials </a>  </li>                                              
+                        <li> <a href="#/Customers/list"><i class="fa fa-vcard"></i> Vendors </a>  </li> 
+                        <li> <a href="#/Customers/list"><i class="fa fa-list"></i> Price Lists </a>  </li> 
+                        <li> <a href="#/Customers/list"><i class="fa fa-file-text"></i> Purchase Orders </a>  </li> 
+                        <li> <a href="#/Customers/list"><i class="fa fa-file-text-o"></i> Orders </a>  </li> 
+                        <li> <a href="#/Customers/list"><i class="fa fa-shopping-cart"></i> Sales Receipt </a>  </li> 
+                        <li> <a href="#/Customers/list"><i class="fa fa-money"></i> Income </a>  </li> 
+                        <li> <a href="#/Customers/list"><i class="fa fa-credit-card"></i> Expense </a>  </li> 
 
-                                <li><a href="layout-dashboard-only.html">Dashboard Only</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-heading"><span>Components</span></li><li><a href="jquery-ui-elements.html"><i class="icon-wrench"></i> Jquery UI Elements</a></li>
-                        <li>
-                            <a href="javascript: void(0);" aria-expanded="true"><i class="icon-settings"></i> UI elements <span class="fa arrow"></span></a>
-                            <ul class="nav-second-level nav" aria-expanded="false">
-                                <li><a href="ui-typography.html">Typography</a></li>
-                                <li><a href="ui-icons.html">Icons</a></li>
-                                <li><a href="ui-panels.html">Panels</a></li>
-                                <li><a href="ui-buttons.html">Buttons</a></li>
-                                <li><a href="ui-tabs.html">tabs</a></li>
-                                <li><a href="ui-tip-pop.html">Tooltip & Popovers</a></li>
-                                <li><a href="ui-alerts.html">Alerts</a></li>
-                                <li><a href="ui-modals.html">modals</a></li>
-                                <li><a href="ui-grid.html">grid system</a></li>
-                                <li><a href="ui-carousel.html">Carousel</a></li>
-                                <li><a href="ui-sweetalerts.html">Sweet alters</a></li><li><a href="ui-alertify.html">Alertify Alters</a></li>
-                                <li><a href="ui-sliders.html">Sliders</a></li>
-                                <li><a href="ui-nestable.html">Nestable</a></li>
-                                <li><a href="ui-date-time-picker.html">Date time pickers</a></li>
-                                <li><a href="ui-treeview.html">Tree view</a></li><li><a href="ui-draggable-panels.html">Draggable Panels</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" aria-expanded="true"><i class="icon-pencil"></i> Forms <span class="fa arrow"></span></a>
-                            <ul class="nav-second-level nav" aria-expanded="true">
-                                <li><a href="form-basic.html">Basic elements</a></li>
-                                <li><a href="form-file-upload.html">File upload</a></li>
-                                <li><a href="form-editor.html">text editor</a></li>
-                                <li><a href="form-wizard.html">Form Wizard</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" aria-expanded="true"><i class="icon-bar-chart"></i> Charts <span class="fa arrow"></span></a>
-                            <ul class="nav-second-level nav" aria-expanded="true">
-                                <li><a href="chart-flot.html">Flot</a></li>
-                                <li><a href="chart-morris.html">Morris</a></li>
-                                <li><a href="chart-radial.html">Radial</a></li>
-                                <li><a href="chart-c3.html">C3</a></li>
-                                <li><a href="chart-sparkline.html">Sparkline</a></li>
-                                <li><a href="chart-rickshaw.html">rickshaw</a></li>
-                                <li><a href="chart-chartjs.html">ChartJs</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" aria-expanded="true"><i class="icon-list"></i> Tables <span class="fa arrow"></span></a>
-                            <ul class="nav-second-level nav" aria-expanded="true">
-                                <li><a href="table-basic.html">Basic tables</a></li>
-                                <li><a href="table-data.html">Data tables</a></li>
-                                <li><a href="table-foo.html">Foo tables</a></li>
+                        
 
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" aria-expanded="true"><i class="icon-map"></i> Maps <span class="fa arrow"></span></a>
-                            <ul class="nav-second-level nav" aria-expanded="true">
-                                <li><a href="map-vector.html">Vector map</a></li>
-                                <li><a href="map-google.html">Google map</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-heading"><span>More</span></li>
-                        <li>
-                            <a href="javascript: void(0);" aria-expanded="true"><i class="icon-folder"></i> Pages <span class="fa arrow"></span></a>
-                            <ul class="nav-second-level nav" aria-expanded="true">
-                                <li><a href="page-empty.html">Empty page</a></li>
-                                <li><a href="page-lockscreen.html">Lock-screen</a></li>
-                                <li><a href="page-login.html">Login</a></li>
-                                <li><a href="page-register.html">Register</a></li>
-                                <li><a href="page-forget-password.html">Forget Password</a></li>
-                                <li><a href="page-404.html">404</a></li>
-                                <li><a href="page-gallery.html">Gallery</a></li>
-                                <li><a href="page-timeline.html">Timeline</a></li>
-                                <li><a href="page-invoice.html">Invoice</a></li>
-                                <li><a href="page-profile.html">Profile</a></li>
-                                <li><a href="page-calendar.html">Calendar</a></li>
-                                <li><a href="page-chat-room.html">Chat room</a></li>
-                                <li><a href="page-faqs.html">Faqs</a></li>
-                                <li><a href="page-pricing.html">Pricing</a></li>
-                                <li><a href="page-contacts.html">Contacts</a></li>
-                                <li><a href="page-blog.html">Blog</a></li>
-                                <li><a href="page-blog-article.html">Blog article</a></li>
 
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" aria-expanded="true"><i class="icon-folder-alt"></i> Nested menu <span class="fa arrow"></span></a>
-                            <ul class="nav-second-level nav" aria-expanded="true">
-                                <li><a href="javascript: void(0);">Level 1</a></li>
-                                <li><a href="javascript: void(0);" aria-expanded="true">Level 2 <span class="fa arrow"></span></a>
-                                    <ul class="nav-third-level nav" aria-expanded="true">
-                                        <li><a href="javascript: void(0);">Level 2</a></li>
-                                        <li><a href="javascript: void(0);">Level 2</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+
                         <!--<li><a href="landing/index.html" target="_blank" class="bg-primary"><i class="icon-star"></i>Landing page</a></li>-->
                     </ul>
                 </div><!--nano content-->
@@ -332,12 +229,17 @@
         <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0/angular.min.js"> </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.26/angular-ui-router.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.8.0/angular-messages.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"  crossorigin="anonymous"></script>        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.0/angular-messages.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"  ></script>        
         <script src="js/app.js"></script>        
         <script src="js/loadScripts.js"></script>
-        <script src="js/dataService.js"></script>
+        <script src="services/dataService.js"></script>
+        <script src="services/alertService.js"></script> 
+        <script src="services/pageService.js"></script>
         <script src="customers/CustomerController.js"></script>
+        <script src="products/productController.js"></script>
+        <script src="prodNameChanges/prodNameChangeController.js"></script>
+        <srcipt src="plugins/datepicker/datepicker.min.js"></srcipt>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/4.0.0/js/jasny-bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
@@ -350,6 +252,6 @@
         <!-- Datatables-->
         <script src="plugins/datatables/dataTables.responsive.min.js"></script>
         <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
-        <script src="js/e-commerce-dashboard-custom.js"></script>
+        <script src="js/e-commerce-dashboard-custom.js"></script>       
     </body>
 </html>

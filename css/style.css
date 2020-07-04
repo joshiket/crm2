@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Arimo:400,400i,700");
 /*Fonts*/
 /**background-colors*/
+.help-block{
+  color:maroon; 
+  text-transform: uppercase;
+}
 .bg-light-dark {
   background-color: rgba(0, 0, 0, 0.1);
 }
@@ -497,6 +501,7 @@ Panels css
 
 .panel-body {
   position: relative;
+  border-bottom: #5aa8ed solid 2px;
 }
 
 /**panel colors**/
@@ -511,6 +516,9 @@ Panels css
 .panel-default > .panel-heading {
   background-color: transparent;
   border-bottom: 0px;
+  background: #5aa8ed;
+  color: #fff;
+  border-radius: 2px;
 }
 
 .panel-default .panel-heading a.collapsed {

@@ -1,0 +1,79 @@
+<div class="page-header">
+    <div class="row" >
+        <div class="col-sm-6">
+            <h4><i class="fa fa-cube"></i>&nbsp;Product name changes</h4>
+        </div>
+        <div class="col-sm-6 text-right">
+            <ol class="breadcrumb">
+                <li><a href="javascript: void(0);"><i class="fa fa-tachometer"></i></a></li>
+                <li>Dashboard</li>
+                <li>Product name change list</li>
+            </ol>
+        </div>
+    </div>
+</div>
+    
+    <div class="row" >
+        <br><br>
+        <div class="col-sm-push-1 col-sm-10 " >
+            <div class="panel panel-default" style="border: #dde6e9 solid 1px;">
+                <div class="panel-heading">
+                    <div style="float:left;"> <i class="fa fa-cube"></i> Product name changes </div>
+                    <div style="float:right;"></div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <civ class="col-sm-12 text-right">
+                            <a href="#/ProductNameChanges/new"> <i class="fa fa-plus-circle"></i> New Product name change </a> 
+                        </civ>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-push-4 col-sm-4 input-group">
+                            <input type="text" class="form-cntrol" ng-model="query">
+                            <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                        </div>
+                    </div>
+                    <div class="row">  
+                        <div class="col-sm-12" style="margin:10px 0px 0px 0px;">
+                            <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <td> Sr.no. </td>                                    
+                                    <td> Old name </td>                                    
+                                    <td> New name </td>
+                                    <td> Actions </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="pnc in pnclc.prodNameChanges.data2show | filter: query track by $index">
+                                    <td>{{$index+1}}</td>                                   
+                                    <td>{{pnc.oldName}}</td>                                    
+                                    <td>{{pnc.newName}}</td>
+                                    <td> 
+                                        <a class="btn btn-success btn-xs" href="#/ProductNameChanges/edit/{{pnc.pncId}}"><i class="fa fa-pencil-square"></i></a>
+                                        <a class="btn btn-danger btn-xs" href="#/ProductNameChanges/delete/{{pnc.pncId}}"><i class="fa fa-trash"></i></a>                                        
+                                    </td>
+                                </tr>
+                            </tbody>
+                            </table>
+                        </div> 
+                    </div>
+                    <div class="row" ng-show="pnclc.Paging.pagingRequired();">
+                        <div class="col-sm-2 text-left">
+                            <button class="btn btn-primary btn-xs" ng-show="pnclc.Paging.showPrevious()" ng-click="pnclc.Paging.First(pnclc.prodNameChanges);"> <i class="fa fa-backward"></i></button>
+                            <button class="btn btn-primary btn-xs" ng-show="pnclc.Paging.showNext()" ng-click="pnclc.Paging.Last(pnclc.prodNameChanges);"> <i class="fa fa-forward"></i></button>
+                        </div>                                                            
+                        <div class="col-sm-8 text-center" style="margin-top:7px;">
+                            <h6>Page {{pnclc.Paging.getCurrentPage()}} of {{pnclc.Paging.getNoOfPages()}}</h6>
+                        </div>
+                        <div class="col-sm-2 text-right">                                
+                            <button class="btn btn-primary btn-xs" ng-show="pnclc.Paging.showPrevious()" ng-click="pnclc.Paging.Previous(pnclc.prodNameChanges);"> <i class="fa fa-angle-left"></i></button>
+                            <button class="btn btn-primary btn-xs" ng-show="pnclc.Paging.showNext()" ng-click="pnclc.Paging.Next(pnclc.prodNameChanges);"> <i class="fa fa-angle-right"></i></button>
+                        </div>
+                    </div>                       
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>

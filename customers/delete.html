@@ -1,0 +1,83 @@
+<div class="page-header">
+    <div class="row" >
+        <div class="col-sm-6">
+            <h4><i class="fa fa-users"></i>&nbsp;Customers</h4>
+        </div>
+        <div class="col-sm-6 text-right">
+            <ol class="breadcrumb">
+                <li><a href="javascript: void(0);"><i class="fa fa-tachometer"></i></a></li>
+                <li>Dashboard</li>
+                <li>Customers</li>
+            </ol>
+        </div>
+    </div>
+</div>
+    
+    <div class="row" >
+        <br><br>
+        <div class="col-sm-push-2 col-sm-8 " >
+            <div class="panel panel-default" style="border: #dde6e9 solid 1px;">
+                <div class="panel-heading">
+                    <div style="float:left;"> <i class="fa fa-users"></i> Delete Customer </div>
+                    <div style="float:right;"><small></small></div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+                            <a href="#/Customers/list"> <i class="fa fa-list-alt"></i> Customers</a> 
+                        </div>
+                    </div>
+                    <div class="row">                           
+                        <div class="col-sm-12" style="margin:10px 0px 0px 0px;">
+                            <table class="table table-bordered table-hovered table-striped">
+                                <thead>
+                                    <tr>
+                                        <td> Sr.no. </td>
+                                        <td> Picture </td>
+                                        <td> First name </td>                                    
+                                        <td> Last name </td>
+                                        <td> Cell phone no. </td>
+                                        <td> Birth date </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><img ng-src="{{'images/dispPic/' + dcc.Customer2Delete.disPic}}" style="width:50px;height:50px;border-radius:50px;"></td>
+                                        <td>{{dcc.Customer2Delete.firstName}}</td>                                    
+                                        <td>{{dcc.Customer2Delete.lastName}}</td>
+                                        <td>{{dcc.Customer2Delete.cellPhone}}</td>
+                                        <td>{{dcc.Customer2Delete.bdate}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <strong>Are you sure you want to delete this customer ?</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" ng-show="dcc.alerts.isComplete();">
+                        
+                        <div class="alert alert-success" ng-show="dcc.alerts.isComplete() && !dcc.alerts.hasError()">
+                            <i class="fa fa-check-circle"></i> {{dcc.alerts.getMessage()}}
+                        </div>
+                        <div class="alert alert-danger" ng-show="dcc.alerts.isComplete() && dcc.alerts.hasError()">
+                            <i class="fa fa-exclamation-triangle"></i> {{dcc.alerts.getMessage()}}
+                        </div>  
+                    </div>
+                </div>                  
+                <br><br>
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-8">
+                        <button class="btn btn-danger" ng-click="dcc.deleteCustomer();"><i class="fa fa-trash"></i> Delete</button>
+                        <a class="btn btn-default" href="#/Customers/list">Reset</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>

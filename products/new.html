@@ -1,0 +1,81 @@
+<div class="page-header">
+    <div class="row" >
+        <div class="col-sm-6">
+            <h4><i class="fa fa-cube"></i>&nbsp;Products</h4>
+        </div>
+        <div class="col-sm-6 text-right">
+            <ol class="breadcrumb">
+                <li><a href="javascript: void(0);"><i class="fa fa-tachometer"></i></a></li>
+                <li>Dashboard</li>
+                <li>Products</li>
+            </ol>
+        </div>
+    </div>
+</div>
+    
+    <div class="row" >
+        <br><br>
+        <div class="col-sm-push-2 col-sm-8 " >
+            <div class="panel panel-default" style="border: #dde6e9 solid 1px;">
+                <div class="panel-heading">
+                    <div style="float:left;"> <i class="fa fa-users"></i> New Product </div>
+                    <div style="float:right;"><small></small></div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+                            <a href="#/Products/list"> <i class="fa fa-list-alt"></i> Products</a> 
+                        </div>                        
+                    </div>
+                    <div class="row">  
+                        <form name="npForm" novalidate>
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <label>Product name </label>
+                                        <input type="text" class="form-control" 
+                                               ng-model="npc.Product.prodName" 
+                                               name="prodName" required>
+                                       
+                                        <div ng-messages="npForm.prodName.$error" ng-if="npForm.prodName.$dirty" class="help-block" role="alert">
+                                            <div ng-message="required"><small><i class="fa fa-asterisk"></i> Product name  is mandatory.</small></div>                                                               
+                                        </div>    
+                                    </div>
+                                    <div class="col-sm-push-2 col-sm-5">
+                                        <label>MRP</label>
+                                        <input type="text" class="form-control" 
+                                               ng-model="npc.Product.prodMRP" 
+                                               name="prodMRP" required>
+
+                                        <div ng-messages="npForm.prodMRP.$error" ng-show="npForm.prodMRP.$dirty" class="help-block" role="alert">
+                                            <div ng-message="required"><small><i class="fa fa-asterisk"></i> Product mrp  is mandatory.</small></div>
+                                        </div>
+                                    </div>               
+                                </div>  
+ 
+                                <br><br>
+                                <div class="row">
+                                    <div class="col-sm-12" ng-show="npc.alerts.isComplete();">
+                                        <div class="alert alert-success" ng-show="npc.alerts.isComplete() && !npc.alerts.hasError()">
+                                            <i class="fa fa-check-circle"></i> {{npc.alerts.getMessage()}}
+                                        </div>
+                                        <div class="alert alert-danger" ng-show="npc.alerts.isComplete() && npc.alerts.hasError()">
+                                            <i class="fa fa-exclamation-triangle"></i> {{npc.alerts.getMessage()}}
+                                        </div>  
+                                    </div>
+                                </div>    
+                                <div class="row">
+                                    <div class="col-sm-3 pull-right">
+                                        <buton class="btn btn-primary" ng-show="npForm.$valid" ng-click="npc.createProduct();"><i class="fa fa-save"></i> Save</buton>
+                                        <button class="btn btn-default" ng-click="npc.resetForm();">Reset</button>
+                                    </div>
+                                </div>                          
+                            </div>           
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>

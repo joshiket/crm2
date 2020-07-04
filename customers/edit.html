@@ -18,28 +18,30 @@
         <div class="col-sm-push-2 col-sm-8 " >
             <div class="panel panel-default" style="border: #dde6e9 solid 1px;">
                 <div class="panel-heading">
-                    <div style="float:left;"> <i class="fa fa-users"></i> New Customer </div>
-                    <div style="float:right;"><small></small></div>
+                    <div style="float:left;"> <i class="fa fa-users"></i> Edit Customer </div>
+                    <div style="float:right;"></div>
                     <div style="clear:both;"></div>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-12 text-right">
-                            <a href="#/Customers/list"> <i class="fa fa-list-alt"></i> Customers</a> 
-                        </div>                        
+                            <small></small>
+                        </div>
                     </div>
-                    <div class="row">  
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+                            <a href="#/Customers/list"> <i class="fa fa-list-alt"></i> Customers</a> 
+                        </div>
+                    </div>
+                    <div class="row">                          
                         <form name="ncForm" novalidate>
                             <div class="col-sm-12">
                                 <div class="row">
                                     <div class="col-sm-5">
-                                        <label>Last name </label>
+                                        <label>Last name {{"|" + ucc.dataChanged() + "|"}}</label>
                                         <input type="text" class="form-control" 
-                                               ng-model="ncc.Customer.data.lastName" list="lstLastNames" 
-                                               ng-blur="ncc.getFirstNames();" name="lastName" required>
-                                        <datalist id="lstLastNames" ng-repeat="ln in ncc.lastNames track by $index" >
-                                            <option value="{{ln}}">{{ln}}</option>
-                                        </datalist>                                        
+                                               ng-model="ucc.Customer2Update.lastName"  
+                                               name="lastName" required>                                        
                                         <div ng-messages="ncForm.lastName.$error" ng-if="ncForm.lastName.$dirty" class="help-block" role="alert">
                                             <div ng-message="required"><small><i class="fa fa-asterisk"></i> Last name  is mandatory.</small></div>                                                               
                                         </div>    
@@ -47,11 +49,9 @@
                                     <div class="col-sm-push-2 col-sm-5">
                                         <label>First name</label>
                                         <input type="text" class="form-control" 
-                                               ng-model="ncc.Customer.data.firstName" 
+                                               ng-model="ucc.Customer2Update.firstName" 
                                                list="lstFirstNames" name="firstName" required>
-                                        <datalist id="lstFirstNames" ng-repeat="fn in ncc.firstNames">
-                                            <option value="{{fn}}">{{fn}}</option>
-                                        </datalist>
+
                                         <div ng-messages="ncForm.firstName.$error" ng-show="ncForm.firstName.$dirty" class="help-block" role="alert">
                                             <div ng-message="required"><small><i class="fa fa-asterisk"></i> First name  is mandatory.</small></div>
                                         </div>
@@ -60,7 +60,7 @@
                                 <div class="row">
                                     <div class="col-sm-5">
                                         <label>Cell phone</label>
-                                        <input type="text" class="form-control" ng-model="ncc.Customer.data.cellPhone"
+                                        <input type="text" class="form-control" ng-model="ucc.Customer2Update.cellPhone"
                                                name="cellphone">                                        
                                     </div>
                                     <div class="col-sm-push-2 col-sm-5">
@@ -68,7 +68,7 @@
                                         <div class="input-group">
                                             <input type="date" id="cdp" 
                                                    class="form-control" 
-                                                   ng-model="ncc.Customer.data.bdateT"
+                                                   ng-model="ucc.Customer2Update.tbdate"
                                                    name="bdate" data-date-format="DD-MM-YYYY">                                                                                
                                             <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                         </div>
@@ -79,35 +79,35 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <label>Display Image</label>
-                                                <input type="text" class="form-control" ng-model="ncc.Customer.data.disPic" 
-                                                       list="lstDisPics" ng-focus="ncc.toggleImageList();"
+                                                <input type="text" class="form-control" ng-model="ucc.Customer2Update.disPic" 
+                                                       list="lstDisPics" ng-focus="ucc.toggleImageList();"
                                                        name="disPic" required>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-sm-12" ng-show="ncc.showImageList" style="height:150px; overflow-y: scroll;">
-                                                <ul ng-repeat="p in ncc.disPics | filter: ncc.Customer.data.disPic  track by $index" style="cursor:pointer;list-style:none;">
-                                                    <li value="{{p}}" ng-click="ncc.selectDisPic(p);"><img ng-src="{{'images/dispPic/' + p}}" style="width:50px;height:50px;border-radius:50px;"></li>
+                                            <div class="col-sm-12" ng-show="ucc.showImageList" style="height:150px; overflow-y: scroll;">
+                                                <ul ng-repeat="p in ucc.disPics | filter: ucc.Customer.data.disPic  track by $index" style="cursor:pointer;list-style:none;">
+                                                    <li value="{{p}}" ng-click="ucc.selectDisPic(p);"><img ng-src="{{'images/dispPic/' + p}}" style="width:50px;height:50px;border-radius:50px;"></li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>            
                                 </div>   
-                                <br><br>
                                 <div class="row">
-                                    <div class="col-sm-12" ng-show="ncc.alerts.isComplete();">
-                                        <div class="alert alert-success" ng-show="ncc.alerts.isComplete() && !ncc.alerts.hasError()">
-                                            <i class="fa fa-check-circle"></i> {{ncc.alerts.getMessage()}}
+                                    <div class="col-sm-12" ng-show="ucc.alerts.isComplete();">
+                                        
+                                        <div class="alert alert-success" ng-show="ucc.alerts.isComplete() && !ucc.alerts.hasError()">
+                                            <i class="fa fa-check-circle"></i> {{ucc.alerts.getMessage()}}
                                         </div>
-                                        <div class="alert alert-danger" ng-show="ncc.alerts.isComplete() && ncc.alerts.hasError()">
-                                            <i class="fa fa-exclamation-triangle"></i> {{ncc.alerts.getMessage()}}
+                                        <div class="alert alert-danger" ng-show="ucc.alerts.isComplete() && ucc.alerts.hasError()">
+                                            <i class="fa fa-exclamation-triangle"></i> {{ucc.alerts.getMessage()}}
                                         </div>  
                                     </div>
                                 </div>    
                                 <div class="row">
                                     <div class="col-sm-3 pull-right">
-                                        <buton class="btn btn-primary" ng-show="ncForm.$valid" ng-click="ncc.createCustomer();"><i class="fa fa-save"></i> Save</buton>
-                                        <button class="btn btn-default" ng-click="ncc.resetForm();">Reset</button>
+                                        <buton class="btn btn-primary" ng-show="ncForm.$valid && ucc.dataChanged()" ng-click="ucc.updateCustomer();"><i class="fa fa-save"></i> Save</buton>
+                                        <button class="btn btn-default" ng-click="ucc.resetForm();">Reset</button>
                                     </div>
                                 </div>                          
                             </div>           

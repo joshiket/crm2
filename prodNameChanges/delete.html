@@ -1,0 +1,77 @@
+<div class="page-header">
+    <div class="row" >
+        <div class="col-sm-6">
+            <h4><i class="fa fa-cube"></i>&nbsp;Product name changes</h4>
+        </div>
+        <div class="col-sm-6 text-right">
+            <ol class="breadcrumb">
+                <li><a href="javascript: void(0);"><i class="fa fa-tachometer"></i></a></li>
+                <li>Dashboard</li>
+                <li>Product name changes</li>
+            </ol>
+        </div>
+    </div>
+</div>
+    
+    <div class="row" >
+        <br><br>
+        <div class="col-sm-push-1 col-sm-10 " >
+            <div class="panel panel-default" style="border: #dde6e9 solid 1px;">
+                <div class="panel-heading">
+                    <div style="float:left;"> <i class="fa fa-cube"></i> Delete Product name changes </div>
+                    <div style="float:right;"><small></small></div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+                            <a href="#/ProductNameChanges/list"> <i class="fa fa-plus-circle"></i> Product name change list</a> 
+                        </div>
+                    </div>
+                    <div class="row">
+                    </div>
+                    <div class="row">  
+                        <div class="col-sm-12" style="margin:10px 0px 0px 0px;">
+                            <table class="table table-bordered table-hovered table-striped">
+                            <thead>
+                                <tr>
+                                    <td> Sr.no. </td>                                    
+                                    <td> Old name </td>                                    
+                                    <td> New name </td>                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1.</td>                                   
+                                    <td>{{dpncc.prodNameChange2DELETE.oldName}}</td>                                    
+                                    <td>{{dpncc.prodNameChange2DELETE.newName}}</td>
+                                </tr>
+                            </tbody>
+                            </table>
+                        </div> 
+                    </div>
+                    <div class="row" >
+                        <div class="col-sm-12 text-center">
+                            <strong>Are you sure you want to delete this record ?</strong>
+                        </div>
+                    </div>  
+                    <div class="row">
+                        <div class="col-sm-12" ng-show="dpncc.alerts.isComplete();">
+                            <div class="alert alert-success" ng-show="dpncc.alerts.isComplete() && !dpncc.alerts.hasError()">
+                                <i class="fa fa-check-circle"></i> {{dpncc.alerts.getMessage()}}
+                            </div>
+                            <div class="alert alert-danger" ng-show="dpncc.alerts.isComplete() && dpncc.alerts.hasError()">
+                                <i class="fa fa-exclamation-triangle"></i> {{dpncc.alerts.getMessage()}}
+                            </div>  
+                        </div>
+                    </div>                      
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+                            <button class="btn btn-danger" ng-click="dpncc.deleteProductNameChanges();"><i class="fa fa-trash"></i> Delete</button>
+                        </div>
+                    </div>                     
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
